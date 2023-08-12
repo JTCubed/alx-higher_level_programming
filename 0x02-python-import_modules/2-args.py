@@ -17,7 +17,7 @@ if __name__ == "__main__":
         print(f"{count} argument:")
     else:
         print(f"{count} arguments:")
-        if (count !=0):
-            for j in sys.argv[1:]:
-                print(f"{count2}: {sys.argv[count2]}")
-                count2 += 1
+    if (count != 0):
+        for j in sys.argv[1:]:
+            print(f"{count2}: {sys.argv[count2]}")
+            count2 += 1
