@@ -4,6 +4,7 @@ def delete_at(my_list=[], idx=0):
     if my_list is None:
         my_list1 = []
     if idx < 0 or idx > len(my_list) - 1:
-        return (my_list1)
+        return (my_list)
     else:
-        return (my_list1[:idx] + my_list1[idx+1:])
+        my_list[:] = (my_list[:idx] + my_list[idx+1:])
+        return (my_list)
