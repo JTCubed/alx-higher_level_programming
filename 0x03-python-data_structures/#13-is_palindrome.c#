@@ -15,4 +15,6 @@ int is_palindrome(listint_t **head)
 	rev = rev->next->next;
 	current = current->next;
     }
+
+    if
 }
