@@ -9,7 +9,6 @@ class Rectangle:
     number_of_instances = 0
     print_symbol = '#'
 
-
     def __init__(self, width=0, height=0):
         """ Initializes the rectangle with optional width and height.
 
@@ -89,7 +88,8 @@ class Rectangle:
         return '\n'.join(rows)
 
     def __repr__(self):
-        """Return a string that can be used to reproduce the rectangle object"""
+        """Return a string that can be used to
+reproduce the rectangle object"""
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
