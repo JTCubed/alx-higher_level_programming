@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+"""Represents the BaseGeometry class."""
+
+
 class BaseGeometry:
     """Represents the BaseGeometry class."""
 
