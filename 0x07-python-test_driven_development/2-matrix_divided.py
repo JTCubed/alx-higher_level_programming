@@ -22,15 +22,15 @@ def matrix_divided(matrix, div):
 
     if type(matrix) != list or len(matrix) == 0:
         raise TypeError("matrix must be a matrix(list of lists) of"
-                        "integers/floats")
+                        " integers/floats")
     for i in matrix:
         if type(i) != list or len(i) == 0:
             raise TypeError("matrix must be a matrix (list of lists) of"
-                            "integers/floats")
+                            " integers/floats")
         for num in i:
             if type(num) not in [int, float]:
                 raise TypeError("matrix must be a matrix (list of lists) of"
-                                "integers/floats")
+                                " integers/floats")
 
     row_size = len(matrix[0])
     if any(len(row) != row_size for row in matrix):

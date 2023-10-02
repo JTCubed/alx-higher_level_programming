@@ -21,3 +21,18 @@ Use the add_integer function:
     90
     >>> add_integer(6, 6)
     12
+
+    >>> add_integer(1.8e308, 1)
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(float('nan'), 1)
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+
+    >>> add_integer(1)
+    99
+
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
