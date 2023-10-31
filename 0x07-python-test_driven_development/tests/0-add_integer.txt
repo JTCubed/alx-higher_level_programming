@@ -1,0 +1,38 @@
+Use the add_integer function:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(1, 2)
+    3
+    >>> add_integer(1.5, 2.5)
+    3
+
+    >>> add_integer(1, "School")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+    >>> add_integer("World", 6)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(2, 6.0)
+    8
+    >>> add_integer(2, 4)
+    6
+    >>> add_integer(89, 1)
+    90
+    >>> add_integer(6, 6)
+    12
+
+    >>> add_integer(1.8e308, 1)
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(float('nan'), 1)
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+
+    >>> add_integer(1)
+    99
+
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
