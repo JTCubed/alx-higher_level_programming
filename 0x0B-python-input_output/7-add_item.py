@@ -1,12 +1,9 @@
 #!/usr/bin/python3
-
+"""creates an Object from a “JSON file”:"""
 import sys
 import os
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
-
-
-"""creates an Object from a “JSON file”:"""
 
 
 def add_to_list_and_save(args, filename):
