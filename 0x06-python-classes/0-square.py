@@ -1,8 +1,12 @@
 #!/usr/bin/python3
 
-"""This is an empty class with no objects """
+"""
+An empty class
+"""
 
 
 class Square:
-    """This is an empty class with no objects """
+    """
+    empty class
+    """
     pass
