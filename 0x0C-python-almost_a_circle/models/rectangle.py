@@ -24,6 +24,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """return width as a private instance"""
         return (self.__width)
 
     @width.setter
@@ -36,6 +37,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """return height as a private instance"""
         return(self.__height)
 
     @height.setter
@@ -47,6 +49,7 @@ class Rectangle(Base):
         self.__height = value
 
     @property
+    """return x as a private instance"""
     def x(self):
         return (self.__x)
 
@@ -59,6 +62,7 @@ class Rectangle(Base):
         self.__x = value
 
     @property
+    """return y as a private instance"""
     def y(self):
         return (self.__y)
 
@@ -72,9 +76,15 @@ class Rectangle(Base):
 
 
     def area(self):
+        """returns the area/ height * width"""
         return (self.__height * self.__width)
 
     def display(self):
+        """
+        prints the rectangle, where height is the rows
+        width the columns x the spaces before the rectangle
+        and y the empty lines before the rectangle
+        """
         for l in range(0, self.__y):
             print()
         for i in range(0, self.__height):
@@ -85,12 +95,21 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        """
+        overriding the __str__ method so that it returns [Rectangle] (<id>)
+        <x>/<y> - <width>/<height>
+        """
         return ("[Rectangle] ({}) {}/{} - {}/{}"
                 .format(self.id, self.__x,
                         self.__y, self.__width, self.__height))
 
 
     def update(self, *args):
+        """
+        Update the class Rectangle by improving the public
+        method def display(self): to print in stdout the Rectangle
+        instance with the character # by taking care of x and y
+        """
         attributes = ["id", "width", "height", "x", "y"]
         for i in range(len(args)):
             setattr(self, attributes[i], args[i])
