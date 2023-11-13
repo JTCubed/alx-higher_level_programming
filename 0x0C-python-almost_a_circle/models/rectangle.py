@@ -11,8 +11,8 @@ from models.base import Base
 
 class Rectangle(Base):
     """
-    Rectangle claass
-    defines a rectangle by methods to print, update, validate and callculate
+    Rectangle class
+    defines a rectangle printing, update, validate and calculating
     the area
     """
 
@@ -88,9 +88,8 @@ class Rectangle(Base):
 
     def display(self):
         """
-        prints the rectangle, where height is the rows
-        width the columns x the spaces before the rectangle
-        and y the empty lines before the rectangle
+        prints the rectangle
+        to stdout
         """
         for line in range(0, self.__y):
             print()
@@ -103,7 +102,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """
-        overriding the __str__ method so that it returns [Rectangle] (<id>)
+        returns [Rectangle] (<id>)
         <x>/<y> - <width>/<height>
         """
         return ("[Rectangle] ({}) {}/{} - {}/{}"
@@ -113,8 +112,7 @@ class Rectangle(Base):
     def update(self, *args):
         """
         Update the class Rectangle by improving the public
-        method def display(self): to print in stdout the Rectangle
-        instance with the character # by taking care of x and y
+        method to print
         """
         attributes = ["id", "width", "height", "x", "y"]
         for i in range(len(args)):
