@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from models.base import Base
 
 """
 Rectangle claass
@@ -7,6 +6,8 @@ defines a rectangle by methods to print, update, validate and callculate
 the area
 """
 
+
+from models.base import Base
 
 class Rectangle(Base):
     """
