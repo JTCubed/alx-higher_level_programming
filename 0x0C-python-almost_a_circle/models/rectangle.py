@@ -28,6 +28,7 @@ class Rectangle(Base):
         return (self.__width)
 
     @width.setter
+    """sets the validators for the width arguments"""
     def width(self, value):
         if type(value) != int:
             raise TypeError("width must be an integer")
@@ -41,6 +42,7 @@ class Rectangle(Base):
         return(self.__height)
 
     @height.setter
+    """sets the validators for the height arguments"""
     def height(self, value):
         if type(value) != int:
             raise TypeError("height must be an integer")
@@ -54,6 +56,7 @@ class Rectangle(Base):
         return (self.__x)
 
     @x.setter
+    """sets the validators for the x arguments"""
     def x(self, value):
         if type(value) != int:
             raise TypeError("x must be an integer")
@@ -67,6 +70,7 @@ class Rectangle(Base):
         return (self.__y)
 
     @y.setter
+    """sets the validators for the y arguments"""
     def y(self, value):
         if type(value) != int:
             raise TypeError("y must be an integer")
