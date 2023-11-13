@@ -1,6 +1,14 @@
 #!/usr/bin/python3
 
-class Bass:
+"""
+Class Base
+"""
+
+
+class Base:
+    """
+    The superclass initiated
+    """
 
     __nb_objects = 0
 
