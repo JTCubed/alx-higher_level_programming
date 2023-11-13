@@ -12,15 +12,12 @@ from models.base import Base
 class Rectangle(Base):
     """
     Rectangle class
-    defines a rectangle printing, update, validate and calculating
-    the area
+    defines a rectangle
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """
-        initiates the Rectangle attributes
-        """
-        Base.__init__(self, id)
+        """initiates the Rectangle attributes"""
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
@@ -69,13 +66,14 @@ class Rectangle(Base):
         self.__x = value
 
     @property
-    """return y as a private instance"""
     def y(self):
+        """return y as a private instance"""
         return (self.__y)
 
     @y.setter
-    """sets the validators for the y arguments"""
+
     def y(self, value):
+        """sets the validators for the y arguments"""
         if type(value) != int:
             raise TypeError("y must be an integer")
         if value < 0:
