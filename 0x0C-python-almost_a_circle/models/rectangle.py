@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """
 Rectangle claass
-defines a rectangle by methods to print, update, validate and callculate
+defines a rectangle by methods to print, update, validate and calculate
 the area
 """
 
 
 from models.base import Base
+
 
 class Rectangle(Base):
     """
