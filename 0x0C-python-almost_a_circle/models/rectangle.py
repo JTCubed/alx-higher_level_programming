@@ -71,7 +71,6 @@ class Rectangle(Base):
         return (self.__y)
 
     @y.setter
-
     def y(self, value):
         """sets the validators for the y arguments"""
         if type(value) != int:
@@ -107,11 +106,17 @@ class Rectangle(Base):
                 .format(self.id, self.__x,
                         self.__y, self.__width, self.__height))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Update the class Rectangle by improving the public
         method to print
         """
         attributes = ["id", "width", "height", "x", "y"]
-        for i in range(len(args)):
-            setattr(self, attributes[i], args[i])
+        if args and len(args) != 0:
+            for i in range(len(args)):
+                setattr(self, attributes[i], args[i])
+
+        else:
+            for key, value in kwargs.items():
+                    if key in attributes:
+                        setattr(self, key, value)
