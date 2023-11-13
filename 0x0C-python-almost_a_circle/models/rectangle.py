@@ -31,8 +31,8 @@ class Rectangle(Base):
         return (self.__width)
 
     @width.setter
-    """sets the validators for the width arguments"""
     def width(self, value):
+        """sets the validators for the width arguments"""
         if type(value) != int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -45,8 +45,8 @@ class Rectangle(Base):
         return(self.__height)
 
     @height.setter
-    """sets the validators for the height arguments"""
     def height(self, value):
+        """sets the validators for the height arguments"""
         if type(value) != int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -54,13 +54,13 @@ class Rectangle(Base):
         self.__height = value
 
     @property
-    """return x as a private instance"""
     def x(self):
+        """return x as a private instance"""
         return (self.__x)
 
     @x.setter
-    """sets the validators for the x arguments"""
     def x(self, value):
+        """sets the validators for the x arguments"""
         if type(value) != int:
             raise TypeError("x must be an integer")
         if value < 0:
