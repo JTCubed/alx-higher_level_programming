@@ -78,7 +78,6 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
-
     def area(self):
         """returns the area/ height * width"""
         return (self.__height * self.__width)
@@ -89,7 +88,7 @@ class Rectangle(Base):
         width the columns x the spaces before the rectangle
         and y the empty lines before the rectangle
         """
-        for l in range(0, self.__y):
+        for line in range(0, self.__y):
             print()
         for i in range(0, self.__height):
             for r in range(0, self.__x):
@@ -106,7 +105,6 @@ class Rectangle(Base):
         return ("[Rectangle] ({}) {}/{} - {}/{}"
                 .format(self.id, self.__x,
                         self.__y, self.__width, self.__height))
-
 
     def update(self, *args):
         """
