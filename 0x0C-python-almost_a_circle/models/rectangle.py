@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 Rectangle claass
 defines a rectangle by methods to print, update, validate and callculate
@@ -17,6 +16,9 @@ class Rectangle(Base):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+        initiates the Rectangle attributes
+        """
         Base.__init__(self, id)
         self.width = width
         self.height = height
