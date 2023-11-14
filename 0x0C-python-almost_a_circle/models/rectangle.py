@@ -118,5 +118,5 @@ class Rectangle(Base):
 
         else:
             for key, value in kwargs.items():
-                    if key in attributes:
-                        setattr(self, key, value)
+                if key in attributes:
+                    setattr(self, key, value)
