@@ -70,3 +70,22 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.height, 30)
         self.assertEqual(r.x, 40)
         self.assertEqual(r.y, 50)
+
+    def test_update_kwargs(self):
+        r = Rectangle(5, 10, 1, 2, 42)
+        r.update(id=9, width=15, height=25, x=3, y=2)
+
+        self.assertEqual(r.id, 9)
+        self.assertEqual(r.width, 15)
+        self.assertEqual(r.height, 25)
+        self.assertEqual(r.x, 3)
+        self.assertEqual(r.y, 2)
+
+    def test_to_dictionary(self):
+        r = Rectangle(4, 5, 6, 7, 8)
+        dictionary = r.to_dictionary()
+        expected_dict = {'id': 8, 'width': 4, 'height': 5, 'x': 6, 'y': 7}
+        self.assertDictEqual(dictionary, expected_dict)
+
+if __name__ == '__main__':
+    unittest.main()
