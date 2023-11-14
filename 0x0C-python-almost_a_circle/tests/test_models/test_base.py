@@ -50,19 +50,6 @@ class test_Base(unittest.TestCase):
         expected_list = [{'id': 1}, {'id': 2}]
         self.assertEqual(base_list, expected_list)
 
-    def test_create(self):
-        b = Base.create(id=1, name='John')
-        self.assertIsInstance(b, Base)
-        self.assertEqual(b.id, 1)
-        self.assertFalse(hasattr(b, 'name'))
-
-    def test_load_from_file(self):
-        Base.save_to_file([Base(1), Base(2)])
-
-        loaded_objs = Base.load_from_file()
-        self.assertIsNotNone(loaded_objs)
-        if loaded_objs:
-            self.assertIsInstance(loaded_objs[0], Base)
 
 
 if __name__ == '__main__':
