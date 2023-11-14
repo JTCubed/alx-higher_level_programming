@@ -54,9 +54,12 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
-        dummy = cls(1)
-        dummy.update(**dictionary)
-        return dummy
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy = cls(1)
+        else:
+            return None
 
     @classmethod
     def load_from_file(cls):
