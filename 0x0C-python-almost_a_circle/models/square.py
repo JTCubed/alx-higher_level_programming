@@ -33,12 +33,16 @@ class Square(Rectangle):
         Update the class Rectangle by improving the public
         method to print
         """
-        attributes = ["id", "width", "height", "x", "y"]
+        attributes = ["id", "size", "x", "y"]
         if args and len(args) != 0:
             for i in range(len(args)):
                 setattr(self, attributes[i], args[i])
 
-        else:
+        elif kwargs:
             for key, value in kwargs.items():
                 if key in attributes:
                     setattr(self, key, value)
+
+    def to_dictionary(self):
+        """returns dictionary representaion of Square"""
+        return {'id': self.id, 'size':self.size, 'x':self.x, 'y':self.y}
