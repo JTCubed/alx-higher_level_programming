@@ -28,6 +28,7 @@ class Square(Rectangle):
         """
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
                                                  self.y, self.width)
+
     def update(self, *args, **kwargs):
         """
         Update the class Rectangle by improving the public
@@ -45,4 +46,4 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """returns dictionary representaion of Square"""
-        return {'id': self.id, 'size':self.size, 'x':self.x, 'y':self.y}
+        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
