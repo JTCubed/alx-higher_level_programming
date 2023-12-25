@@ -34,6 +34,7 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-if __name__ == "__main__":
-    x = Rectangle(3, -1)
-    print(x.__dict__)
+
+# if __name__ == "__main__":
+#    x = Rectangle(3, -1)
+#    print(x.__dict__)
