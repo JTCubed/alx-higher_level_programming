@@ -6,5 +6,5 @@ id INT NOT NULL AUTO_INCREMENT,
 PRIMARY KEY (id),
 state_id INT NOT NULL,
 name VARCHAR(256) NOT NULL,
-CONSTRAINT FK_states_cities FOREIGN KEY (id) REFERENCES states(id)
+CONSTRAINT FK_states_cities FOREIGN KEY (states_id) REFERENCES states(id)
 );
