@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-
+"""
+takes in the name of a state as an argument and lists all cities of that state
+"""
 import sys
 import MySQLdb
 
 def citystates(usname, passwrd, dbname):
+    """lists all cities of a state"""
     db = MySQLdb.connect(host='localhost', port=3306, user=usname,
                          passwd=passwrd, db=dbname)
 
