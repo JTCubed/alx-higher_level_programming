@@ -13,7 +13,7 @@ def filter(usname, passwrd, dbname, searched):
     hbtn_0e_0_usa
     """
     db = MySQLdb.connect(host='localhost', port=3306, user=usname,
-                       passwd=passwrd, db=dbname)
+                         passwd=passwrd, db=dbname)
     cur = db.cursor()
     statement = 'SELECT * FROM states WHERE name = %s ORDER BY id ASC'
     cur.execute(statement, (searched,))
@@ -25,6 +25,7 @@ def filter(usname, passwrd, dbname, searched):
 
     cur.close()
     db.close
+
 
 if __name__ == '__main__':
     filter(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
