@@ -15,7 +15,10 @@ def selectstate(usname, passwrd, dbname):
 
     session = Session()
     first_state = session.query(State.id, State.name).first()
-    print("{}: {}".format(first_state[0], first_state[1]))
+    if first_state:
+        print("{}: {}".format(first_state[0], first_state[1]))
+    else:
+        print("Nothing")
 
 
 if __name__ == '__main__':
