@@ -2,8 +2,11 @@
 
 const { argv } = require('node:process');
 const request = require('request');
-url = argv[2];
+const url = argv[2];
 
 request(url, function (error, response, body) {
-    console.log(`code:`, response && response.statusCode);
+  if (error) {
+    console.log(error);
+  }
+  console.log('code:', response && response.statusCode);
 });
