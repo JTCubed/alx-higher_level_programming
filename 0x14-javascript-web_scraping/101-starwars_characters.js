@@ -1,24 +1,40 @@
 #!/usr/bin/node
 
 const { argv } = require('node:process');
-const fnum = argv[2];
-const furl = `https://swapi-api.alx-tools.com/api/films/${fnum}`;
 const request = require('request');
-const fs = require('fs');
+const numf = argv[2];
+const filmurl = `https://swapi-api.alx-tools.com/api/films/${numf}`;
 
-request(furl, function (error, response, body) {
-    const mtjson = JSON.parse(body);
-    const chars = mtjson.characters;
-    let arr = {};
-    var j = 0;
-    for (const ch of chars) {
-	request(ch, function (error, response, bdy) {
-	    const nme = JSON.parse(bdy);
-	    fs.writeFileSync("list.txt", nme.name, 'utf8');
-	    console.log(nme.name);
-	    arr["name"] = nme.name;
-//	    j += 1;
-	})
+function requestPromise (url) {
+  return new Promise((resolve, reject) => {
+    request(url, (error, response, body) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(body);
+      }
+    });
+  });
+}
+
+async function fetchChars () {
+  try {
+    const filmr = await requestPromise(filmurl);
+    const filmdata = JSON.parse(filmr);
+    const chars = filmdata.characters;
+
+    for (const charurl of chars) {
+      try {
+        const charbody = await requestPromise(charurl);
+        const chardata = JSON.parse(charbody);
+        console.log(chardata.name);
+      } catch (error) {
+        // pass
+      }
     }
-//    console.log(arr);
-})
+  } catch (error) {
+    // pass
+  }
+}
+
+fetchChars();
