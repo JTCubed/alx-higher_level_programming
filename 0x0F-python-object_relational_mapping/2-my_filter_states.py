@@ -15,7 +15,7 @@ def filter(usname, passwrd, dbname, searched):
     db = MySQLdb.connect(host='localhost', port=3306, user=usname,
                          passwd=passwrd, db=dbname)
     cur = db.cursor()
-    query = ("SELECT * FROM states WHERE name = '{}'"
+    query = ("SELECT * FROM states WHERE BINARY name = '{}'"
              " ORDER BY states.id ASC".format(searched))
     cur.execute(query)
 

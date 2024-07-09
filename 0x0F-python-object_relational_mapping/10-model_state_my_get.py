@@ -15,13 +15,26 @@ def namep(usname, passwrd, dbname, searchn):
     session = Session()
 
     searchq = "%{}%".format(searchn)
-    sta = session.query(State.id, State.name).filter(State.name.like(
-        searchq)).first()
+    batch_size = 100
 
-    if sta:
-        if searchn in sta:
-            print(sta[0])
-    else:
+    offset = 0
+
+    found = False
+
+    while True:
+        sta = session.query(State.id, State.name).filter(State.name.like(
+            searchq)).limit(batch_size).offset(offset).all()
+
+        if not sta:
+            break
+
+        for state in sta:
+            if searchn in sta:
+                print(sta[0])
+                found = True
+        offset += batch_size
+
+    if not found:
         print('Not found')
 
 

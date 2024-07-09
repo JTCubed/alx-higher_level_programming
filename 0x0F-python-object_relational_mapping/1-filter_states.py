@@ -16,7 +16,7 @@ def city_name(usname, passwrd, dbname):
                          passwd=passwrd, db=dbname)
 
     cur = db.cursor()
-    cmd = 'SELECT * FROM states WHERE name like "N%" ORDER BY states.id ASC'
+    cmd = 'SELECT * FROM states WHERE name LIKE "N%" ORDER BY states.id ASC'
     cur.execute(cmd)
     rows = cur.fetchall()
     for i in rows:
