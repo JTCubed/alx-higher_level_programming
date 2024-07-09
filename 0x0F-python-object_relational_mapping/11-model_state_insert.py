@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-
+"""adding new state to the database"""
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 import sys
 
-"""adding new state to the database"""
 
 def new_state(usname, pswrd, db_name):
     """adding new state to the database"""
