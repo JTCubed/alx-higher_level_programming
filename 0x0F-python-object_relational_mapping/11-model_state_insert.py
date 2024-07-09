@@ -5,7 +5,10 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 import sys
 
+"""adding new state to the database"""
+
 def new_state(usname, pswrd, db_name):
+    """adding new state to the database"""
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:'
                            '3306/{}'.format(usname, pswrd, db_name))
     Session = sessionmaker(bind=engine)
