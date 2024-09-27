@@ -75,3 +75,7 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
+
+    def __del__(self):
+        """detects intance deletion"""
+        print("Bye rectangle...")
