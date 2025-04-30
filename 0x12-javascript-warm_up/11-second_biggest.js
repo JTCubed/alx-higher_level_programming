@@ -12,13 +12,13 @@ if (!argv[3]) {
 //    console.log(arr.max);
 }
 
-function secondH () {
+function secondH (arr) {
   let max = -Infinity;
   let sec = -Infinity;
 
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] > max) {
-      //      sec1 = max;
+      sec = max;
       max = arr[i];
     } else if (arr[i] > sec && arr[i] !== max) {
       sec = arr[i];
