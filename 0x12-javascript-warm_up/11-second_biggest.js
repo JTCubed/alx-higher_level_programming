@@ -4,7 +4,7 @@ const { argv } = require('node:process');
 
 const arr = [];
 if (!argv[3]) {
-  console.log(0);
+//  console.log(0);
 } else {
   for (let i = 2; i < argv.length; i++) {
     arr.push(parseInt(argv[i]));
