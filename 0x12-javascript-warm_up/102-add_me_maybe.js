@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 
 function addMeMaybe (x, p) {
   p(x + 1);
