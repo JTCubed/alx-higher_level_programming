@@ -11,7 +11,7 @@ class Square extends BaseSquare {
         if (!c) {
           p += 'X';
         } else {
-          p += 'C';
+          p += c;
         }
       }
       if (i + 1 < this.size) {
